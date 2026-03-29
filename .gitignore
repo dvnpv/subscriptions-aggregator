@@ -1,0 +1,32 @@
+# Environment
+.env
+
+# Binaries
+subscriptions-aggregator
+subscriptions-aggregator
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.out
+*.test
+
+# Logs
+*.log
+*.pid
+*.tmp
+
+# Coverage
+coverage.out
+coverage.html
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
