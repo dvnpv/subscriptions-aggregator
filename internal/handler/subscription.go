@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"context"
 	"encoding/json"
 	"errors"
 	"log/slog"
@@ -11,18 +12,26 @@ import (
 	"github.com/dvnpv/subscriptions-aggregator/internal/httpresponse"
 	"github.com/dvnpv/subscriptions-aggregator/internal/model"
 	"github.com/dvnpv/subscriptions-aggregator/internal/repository"
-	"github.com/dvnpv/subscriptions-aggregator/internal/service"
 	"github.com/dvnpv/subscriptions-aggregator/pkg/month"
 
 	"github.com/go-chi/chi/v5"
 )
 
+type SubscriptionService interface {
+	Create(ctx context.Context, req dto.CreateSubscriptionRequest) (*model.Subscription, error)
+	GetByID(ctx context.Context, id string) (*model.Subscription, error)
+	Update(ctx context.Context, id string, req dto.UpdateSubscriptionRequest) (*model.Subscription, error)
+	Delete(ctx context.Context, id string) error
+	List(ctx context.Context, userIDStr, serviceName string, limit, offset int) ([]model.Subscription, error)
+	CalculateTotal(ctx context.Context, fromStr, toStr, userIDStr, serviceName string) (*dto.TotalResponse, error)
+}
+
 type SubscriptionHandler struct {
-	service *service.SubscriptionService
+	service SubscriptionService
 	logger  *slog.Logger
 }
 
-func NewSubscriptionHandler(service *service.SubscriptionService, logger *slog.Logger) *SubscriptionHandler {
+func NewSubscriptionHandler(service SubscriptionService, logger *slog.Logger) *SubscriptionHandler {
 	return &SubscriptionHandler{
 		service: service,
 		logger:  logger,
