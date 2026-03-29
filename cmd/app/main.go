@@ -28,7 +28,8 @@ import (
 func main() {
 	cfg, err := config.Load()
 	if err != nil {
-		panic(err)
+		slog.Error("failed to load config", slog.String("error", err.Error()))
+		os.Exit(1)
 	}
 
 	logger := slog.New(slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{
