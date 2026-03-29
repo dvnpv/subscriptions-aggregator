@@ -9,12 +9,12 @@ import (
 	"syscall"
 	"time"
 
-	_ "subscriptions-aggregator/docs"
-	"subscriptions-aggregator/internal/config"
-	"subscriptions-aggregator/internal/handler"
-	"subscriptions-aggregator/internal/middleware"
-	"subscriptions-aggregator/internal/repository"
-	"subscriptions-aggregator/internal/service"
+	_ "github.com/dvnpv/subscriptions-aggregator/docs"
+	"github.com/dvnpv/subscriptions-aggregator/internal/config"
+	"github.com/dvnpv/subscriptions-aggregator/internal/handler"
+	"github.com/dvnpv/subscriptions-aggregator/internal/middleware"
+	"github.com/dvnpv/subscriptions-aggregator/internal/repository"
+	"github.com/dvnpv/subscriptions-aggregator/internal/service"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/jackc/pgx/v5/pgxpool"

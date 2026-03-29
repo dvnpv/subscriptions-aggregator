@@ -3,7 +3,7 @@ package handler
 import (
 	"net/http"
 
-	"subscriptions-aggregator/internal/httpresponse"
+	"github.com/dvnpv/subscriptions-aggregator/internal/httpresponse"
 )
 
 type HealthHandler struct{}

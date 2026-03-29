@@ -7,12 +7,12 @@ import (
 	"net/http"
 	"strconv"
 
-	"subscriptions-aggregator/internal/dto"
-	"subscriptions-aggregator/internal/httpresponse"
-	"subscriptions-aggregator/internal/model"
-	"subscriptions-aggregator/internal/repository"
-	"subscriptions-aggregator/internal/service"
-	"subscriptions-aggregator/pkg/month"
+	"github.com/dvnpv/subscriptions-aggregator/internal/dto"
+	"github.com/dvnpv/subscriptions-aggregator/internal/httpresponse"
+	"github.com/dvnpv/subscriptions-aggregator/internal/model"
+	"github.com/dvnpv/subscriptions-aggregator/internal/repository"
+	"github.com/dvnpv/subscriptions-aggregator/internal/service"
+	"github.com/dvnpv/subscriptions-aggregator/pkg/month"
 
 	"github.com/go-chi/chi/v5"
 )

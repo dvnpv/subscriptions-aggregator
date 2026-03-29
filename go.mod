@@ -1,4 +1,4 @@
-module subscriptions-aggregator
+module github.com/dvnpv/subscriptions-aggregator
 
 go 1.23
 

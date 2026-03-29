@@ -6,10 +6,10 @@ import (
 	"strings"
 	"time"
 
-	"subscriptions-aggregator/internal/dto"
-	"subscriptions-aggregator/internal/model"
-	"subscriptions-aggregator/internal/repository"
-	"subscriptions-aggregator/pkg/month"
+	"github.com/dvnpv/subscriptions-aggregator/internal/dto"
+	"github.com/dvnpv/subscriptions-aggregator/internal/model"
+	"github.com/dvnpv/subscriptions-aggregator/internal/repository"
+	"github.com/dvnpv/subscriptions-aggregator/pkg/month"
 
 	"github.com/google/uuid"
 )
